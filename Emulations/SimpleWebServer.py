@@ -1,9 +1,9 @@
 from mininet.net import Mininet
 from mininet.log import setLogLevel, info
 from mininet.topo import Topo
+from mininet.cli import CLI
 import sys
 import time
-
 sys.path.append('../')
 from mntools.controllers import POX
 from mntools.host_commands import *
@@ -46,6 +46,7 @@ def runSimpleWebServerSim():
     time.sleep( 2 )
     makeHTTPRequest(h2, h1)
 
+    CLI( net )
     net.stop()
 
 if __name__ == '__main__':
